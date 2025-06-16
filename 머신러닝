@@ -1,0 +1,9 @@
+import seaborn as sns
+
+anscombe = sns.load_dataset("anscombe")
+sns.lmplot(x="x", y="y", data=anscombe.query("dataset == 'II'"),
+           order=2, ci=None, scatter_kws={"s": 80})
+sns.lmplot(x="x", y="y", data=anscombe.query("dataset == 'III'"),
+           ci=None, scatter_kws={"s": 80})
+sns.lmplot(x="x", y="y", data=anscombe.query("dataset == 'III'"),
+           robust=True, ci=None, scatter_kws={"s": 80})
