@@ -1,0 +1,32 @@
+import seaborn as sns
+import pandas as pd
+
+df = pd.DataFrame( {'x': x, 'y2': y2, 'y3': y3})
+sns.pairplot(df)
+plt.show()
+
+  import seaborn as sns
+
+sns.set_theme(style='darkgrid')
+tips = sns.load_dataset("tips")
+
+sns.relplot(
+    data=tips,
+    x="total_bill", y="tip", col="time",
+    hue="smoker", style="smoker", size="size",
+)
+plt.show()
+
+  tips.head(10)
+
+  tips.shape
+
+  sns.histplot(tips['tip'], kde=False, bins=10)
+
+  tips['tip_pct'] = 100* tips['tip'] / tips['total_bill']
+sns.histplot(tips['tip_pct'], kde=True, bins=20)
+
+  sns.relplot(x = 'total_bill', y = 'tip', data = tips)
+
+  import seaborn as sns
+sns.relplot(x = 'total_bill', y = 'tip', hue = 'smoker', style='smoker', data = tips)
